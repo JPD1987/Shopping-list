@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function ( ) {
     initShoppingList();
 };
 
@@ -14,7 +14,6 @@ function handleItemForm(event, formRef) {
     if(event.preventDefault) {
         event.preventDefault();
     }
-
     addItemToShoppingList ();
     formRef.reset();
 
@@ -44,15 +43,19 @@ function setDeleteButtonEvent(id) {
 
 function createListItemHtml(itemName, itemAmount, id) {
     return `<li id="item${id}">
+                ${itemName} - ${itemAmount} 
             <button id="button${id}" type="button">Delete Item</button>
             </li>`;
-
-function removeListItem(id) {
-    let listItem = document.getElementById("item"+id);
-    listItem.parentNode.removeChild(listItem);
 }
 
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
+    function removeListItem(id) {
+        let listItem = document.getElementById("item" + id);
+        listItem.parentNode.removeChild(listItem);
+}
+
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+}
+
